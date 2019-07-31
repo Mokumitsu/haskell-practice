@@ -14,8 +14,8 @@ main = do
     putStrLn (show args)
     -- putStrLn (show hoge)と同じ動き
     print args
-    -- argsそのままなので文字列で認識されてしまう
-    -- 配列は今度やる
+    -- argsそのままなので配列で認識されてしまう
+    -- 配列は学習目的ではないのでコメントアウト
     -- putStrLn args
 
     -- ******
