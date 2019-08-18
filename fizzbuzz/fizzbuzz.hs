@@ -22,13 +22,12 @@ judge num =
         then "FizzBuzz"
         else
         if fizz == 0
-            then "fizz"
+            then "Fizz"
             else
             if buzz == 0
-                then "buzz"
+                then "Buzz"
                 else ""
      where
         fizz = mod num 3
         buzz = mod num 5
         fizzbuzz = mod num 15
-
