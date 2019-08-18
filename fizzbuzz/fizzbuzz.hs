@@ -1,20 +1,23 @@
 main = do
     putStrLn "getInt:"
     a <- getLine
-    let num = read a :: Int
-    let array = [1..num]
-    answerStr array False
+    answer a
 
-answerStr array False= do
+answer input = printAnswer array False
+    where
+        num = read input :: Int
+        array = [1..num]
+
+printAnswer array False= do
     print str
-    answerStr next hasNext
+    printAnswer next hasNext
     where
         num = last array
         next = init array
         str = fizzBuzz num
         hasNext = null next
 
-answerStr array True = print "end"
+printAnswer array True = print "end"
 
 fizzBuzz num = "num:" ++(show num)++ ":" ++ (fizz num) ++ (buzz num)
 
