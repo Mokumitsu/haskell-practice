@@ -3,32 +3,29 @@ main = do
     a <- getLine
     let num = read a :: Int
     let array = [1..num]
-    answer array False
+    answerStr array False
 
-answer array False= do
+answerStr array False= do
     print str
-    answer next hasNext
+    answerStr next hasNext
     where
         num = last array
         next = init array
         str = fizzBuzz num
         hasNext = null next
 
-answer array True = print "end"
+answerStr array True = print "end"
 
-fizzBuzz num = "num:" ++(show num)++ ":" ++ (judge num)
+fizzBuzz num = "num:" ++(show num)++ ":" ++ (fizz num) ++ (buzz num)
 
-judge num = 
-    if fizzbuzz == 0
-        then "FizzBuzz"
-        else
-        if fizz == 0
-            then "Fizz"
-            else
-            if buzz == 0
-                then "Buzz"
-                else ""
+fizz num = if judge then str else "" 
      where
-        fizz = mod num 3
-        buzz = mod num 5
-        fizzbuzz = mod num 15
+        division = mod num 3
+        judge = division == 0
+        str = "Fizz"
+
+buzz num = if judge == True then str else "" 
+     where
+        division = mod num 5
+        judge = division == 0
+        str = "Buzz"
