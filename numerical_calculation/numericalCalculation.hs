@@ -5,7 +5,7 @@ main = do
     print $ a - b
     print $ a * b
     --エラー吐かせない方法がいまいちわからない
-    --print $ (a::Doulbe) / (b::Double)
+    --print $ (read a::Double) / (read b::Double)
     print $ mod a b
 
     {- 型がお互いにキャストできない場合エラーになる？？？
