@@ -3,17 +3,18 @@ main = do
     a <- getLine
     let num = read a :: Int
     let array = [1..num]
-    answer array
+    answer array False
 
-answer array = do
+answer array False= do
     print str
-    answer next
+    answer next hasNext
     where
         num = last array
-        -- num = head array
         next = init array
-        -- next = tail array
         str = fizzBuzz num
+        hasNext = null next
+
+answer array True = print "end"
 
 fizzBuzz num = "num:" ++(show num)++ ":" ++ (judge num)
 
